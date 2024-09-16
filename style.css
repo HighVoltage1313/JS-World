@@ -1,7 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #113f67;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 24%, rgba(5,93,177,1) 61%, rgba(9,9,121,1) 100%);
 }
 
 img {
@@ -10,10 +11,9 @@ img {
 }
 
 #front {
-    margin: 7em;
+    margin: 10% 20% 0 20%;
     padding: 25px;
     background-color: #e7eaf6;
-    border-radius: 25px;
     box-shadow:0px 0px 10px 1px rgb(56, 55, 55);
     border: solid 2px #38598b;
 }
