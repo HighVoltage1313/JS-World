@@ -1,8 +1,11 @@
 body {
     margin: 0;
     padding: 0;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 24%, rgba(5,93,177,1) 61%, rgba(9,9,121,1) 100%);
+    background-image: url("bg.webp");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    padding: 10% 15% 0 15%;
+    
 }
 
 img {
@@ -11,44 +14,50 @@ img {
 }
 
 #front {
-    margin: 10% 20% 0 20%;
-    padding: 25px;
     background-color: #e7eaf6;
     box-shadow:0px 0px 10px 1px rgb(56, 55, 55);
-    border: solid 2px #38598b;
-}
-
-.menuTitle {
-    text-align: center;
+    border: solid 2px #b46321;
 }
 
 .menuList {
     justify-content: center;
     display: flex;
+    margin: 0;
     padding: 0;
     flex-direction: row;
     list-style: none;
 }
 
-.menuItem button {    
-    margin-left: 20px;
-    padding: 5px;
+.menuItem {    
+    flex: 1;
+    transition: 1s;
+}
+
+.menuItem:hover { 
+    transition: 1s;   
+    flex-grow: 2;
+}
+
+.menuItem button { 
+    width: 100%;
+    height: 120px;
     background-color: #38598b;
     color: #e7eaf6;
-    border-radius: 10px;
-    border: solid 1px black;
+    border: solid 1px #b46321;
 }
 
 .menuItem button:hover {
-    background-color: #020f6e;
-}
-
-#content {
-    border-top: solid 1px black;
+    background-color: #020f6e; 
+    flex: 2;
 }
 
 .contentTitle {
     text-align: center;
+    align-content: center;
+    border: solid 1px #b46321;
+    background-color: #b46321;
+    height: 35px;
+    margin: 0;
 }
 
 .contentPage {
