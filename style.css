@@ -178,7 +178,7 @@ img {
     border-radius: 25px;
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: weight;
     font-style: normal;
     position: relative;
 }
@@ -190,7 +190,7 @@ img {
 .screen {
     height: 25px;
     padding: 10px;
-    margin: 20px 10px 20px 10px;
+    margin: 30px 10px 20px 10px;
     text-align: right;
 }
 
@@ -200,6 +200,7 @@ img {
     grid-auto-rows: 100px;
     gap: 6px;
     justify-content: center;
+    user-select: none;
 }
 
 .buttons .btn {
@@ -208,10 +209,22 @@ img {
     display: flex; 
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: 1.5s;
 }
 
-.btn.equal {
+.buttons .btn:active {
+    background: rgb(255, 255, 255, 0.9);
+    transition: .15s;
+}
+
+.btn.orange {
     background-color: #ef7816;
+}
+
+.btn.lightGrey {
+    background-color: rgb(199, 198, 198);
+    color: black;
 }
 
 .btn.zero {
@@ -220,7 +233,7 @@ img {
 
 .side {
     background: rgb(108, 108, 108);
-    width: 40%;
+    width: 100%;
     border-radius: 0 25px 25px 0;
     margin-left: 25px;
 }
