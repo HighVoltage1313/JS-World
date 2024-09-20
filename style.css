@@ -165,3 +165,63 @@ img {
     display: block;
 }
 
+
+.calk {
+    display: flex;
+    padding: 25px;
+    margin: auto;
+    top: 20px;
+    background: rgb(15, 15, 15);
+    max-width: 400px;
+    max-height: 1000px;
+    color: white;
+    border-radius: 25px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    position: relative;
+}
+
+.calk .main {    
+    width: 60%;
+}
+
+.screen {
+    height: 25px;
+    padding: 10px;
+    margin: 20px 10px 20px 10px;
+    text-align: right;
+}
+
+.calk .buttons {
+    display: grid; 
+    grid-template: 50px 50px 50px 50px 50px / 50px 50px 50px 50px;
+    grid-auto-rows: 100px;
+    gap: 6px;
+    justify-content: center;
+}
+
+.buttons .btn {
+    background: rgb(108, 108, 108);
+    border-radius: 25px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.btn.equal {
+    background-color: #ef7816;
+}
+
+.btn.zero {
+    grid-column: 1 / 3;
+}
+
+.side {
+    background: rgb(108, 108, 108);
+    width: 40%;
+    border-radius: 0 25px 25px 0;
+    margin-left: 25px;
+}
+
