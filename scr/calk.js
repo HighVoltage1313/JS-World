@@ -20,7 +20,7 @@ buttons.forEach((button, index) => {
     button.addEventListener("click", () => {
 
         if (button.classList.contains('num')) { // Number click
-            if (button.classList.contains('point') && activeNum == '') { //If point click when value a = ''
+            if (button.classList.contains('point') && (activeNum == '' || activeNum.includes('.'))) { //If point click when value a = ''
                 // nothing
             } else {
             activeNum += button.innerHTML; // button.innerHTML 
@@ -55,11 +55,10 @@ buttons.forEach((button, index) => {
                 operator = button.textContent;      
                 screen.textContent = operator;
                 stepNum = 2;
-                console.log(activeNum);
                 activeNum = '';
             }
             } else if (button.classList.contains('equal')) { // If equal click            
-                if (stepNum != 1) {
+                if (stepNum != 1 && b != '') {
                     if (operator != '') {
                         switch (operator) {
                             case '+':
