@@ -7,6 +7,7 @@ let btnArr = [];
 
 const buttons = document.querySelectorAll('.buttons .btn');
 const screen = document.querySelector('.screen');
+const log = document.querySelector('p.log');
 
 if (stepNum == 1) {
  activeNum = a;
@@ -31,11 +32,12 @@ buttons.forEach((button, index) => {
             b = '';
             operator = '';
             activeNum = '';
+            log.textContent = '';
             step = 1;
         } else if (button.classList.contains('percent')) { // If percent click
-            if (a != '') {
-                a = a / 100;
-                screen.textContent = a;
+            if (activeNum != '' && stepNum == 1) {
+                activeNum = activeNum / 100;
+                screen.textContent = activeNum;
             }
         } else if (button.classList.contains('plusMinus')) { // If +/- click
             if (activeNum != '') {
@@ -44,13 +46,20 @@ buttons.forEach((button, index) => {
             }
         } else if (button.classList.contains('operator')) { // If operator click
             if (stepNum == 1 && a != '') {
-                operator = button.textContent;
+                log.innerHTML += activeNum + '<br>';     
+                operator = button.textContent;  
+                const newLog = document.createElement('p');
+                newLog.textContent = operator;
+                log.appendChild(newLog);
+
+                operator = button.textContent;      
                 screen.textContent = operator;
                 stepNum = 2;
+                console.log(activeNum);
                 activeNum = '';
             }
         } else if (button.classList.contains('equal')) { // If equal click            
-            // let out = a + operator + b;
+            
             if (operator != '') 
             {
                 switch (operator) {
@@ -73,8 +82,13 @@ buttons.forEach((button, index) => {
                 screen.textContent = 0;
             } else {
                 screen.textContent = out;
-            }
-            
+            }   
+
+            log.innerHTML += activeNum + '<br>';
+            const newLog = document.createElement('p');
+            newLog.textContent = '=';
+            log.appendChild(newLog);
+
             operator = '';
             b = '';
             a = out;

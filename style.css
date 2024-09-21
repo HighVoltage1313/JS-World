@@ -237,5 +237,37 @@ img {
     width: 100%;
     border-radius: 0 25px 25px 0;
     margin-left: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.side .log {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    overflow: auto;
+    overflow-y: scroll;
+    text-align: left;
+    direction: rtl;    
+    position: absolute;
+    color: rgb(226, 225, 225);
+}
+
+.side .log::-webkit-scrollbar {
+    width: 3px;
+}
+
+.side .log::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: rgb(56, 55, 55);
+    border: 1px solid rgb(56, 55, 55);
+}
+
+.side .log::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: rgb(158, 158, 158);
 }
 
