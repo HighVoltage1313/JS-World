@@ -248,7 +248,8 @@ img {
     overflow: auto;
     overflow-y: scroll;
     text-align: left;
-    direction: rtl;    
+    direction: rtl;   
+    unicode-bidi: plaintext; 
     position: absolute;
     color: rgb(226, 225, 225);
 }
