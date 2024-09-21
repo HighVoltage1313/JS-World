@@ -46,11 +46,11 @@ buttons.forEach((button, index) => {
             }
         } else if (button.classList.contains('operator')) { // If operator click
             if (stepNum == 1 && a != '') {
-                log.innerHTML += activeNum + '<br>';     
+                log.innerHTML = activeNum + '<br>' + log.innerHTML;     
                 operator = button.textContent;  
                 const newLog = document.createElement('p');
                 newLog.textContent = operator;
-                log.appendChild(newLog);
+                log.prepend(newLog);
 
                 operator = button.textContent;      
                 screen.textContent = operator;
@@ -58,56 +58,57 @@ buttons.forEach((button, index) => {
                 console.log(activeNum);
                 activeNum = '';
             }
-        } else if (button.classList.contains('equal')) { // If equal click            
-            
-            if (operator != '') 
-            {
-                switch (operator) {
-                    case '+':
-                        out = +a + +b;
-                    break;
-                    case '-':
-                        out = +a - +b;
-                    break;
-                    case 'X':
-                        out = +a * +b;
-                    break;
-                    case '/':
-                        out = +a / +b;
-                    break;
+            } else if (button.classList.contains('equal')) { // If equal click            
+                if (stepNum != 1) {
+                    if (operator != '') {
+                        switch (operator) {
+                            case '+':
+                                out = +a + +b;
+                            break;
+                            case '-':
+                                out = +a - +b;
+                            break;
+                            case 'X':
+                                out = +a * +b;
+                            break;
+                            case '/':
+                                out = +a / +b;
+                            break;
+                        }
+                    }
+
+                    if (out == '') {
+                        screen.textContent = 0;
+                    } else {
+                        screen.textContent = out;
+                    }   
+
+                    log.innerHTML = activeNum + '<br>' + log.innerHTML;
+                    const newLog = document.createElement('p');
+                    newLog.textContent = '=';
+                    log.prepend(newLog);
+
+                    operator = '';
+                    b = '';
+                    a = out;
+                    activeNum = out;
+                    stepNum = 1;
                 }
+            } 
+            
+            if (activeNum != '') {
+                if (stepNum == 1) {
+                    a = activeNum;
+                }
+                else {b = activeNum;}
             }
+            
 
-            if (out == '') {
-                screen.textContent = 0;
-            } else {
-                screen.textContent = out;
-            }   
-
-            log.innerHTML += activeNum + '<br>';
-            const newLog = document.createElement('p');
-            newLog.textContent = '=';
-            log.appendChild(newLog);
-
-            operator = '';
-            b = '';
-            a = out;
-            activeNum = out;
-            stepNum = 1;
-        } 
-        
-        if (activeNum != '') {
-            if (stepNum == 1) {
-                a = activeNum;
-            }
-            else {b = activeNum;}
-        }
-
-        /*
-        console.log('Button click');
-        console.log('activeNum: ', activeNum, 'step: ', stepNum);
-        console.log('a: ', a, 'operator: ', operator, 'b: ', b);
-        */
+            /*
+            console.log('Button click');
+            console.log('activeNum: ', activeNum, 'step: ', stepNum);
+            console.log('a: ', a, 'operator: ', operator, 'b: ', b);
+            */
     })
 })
 
