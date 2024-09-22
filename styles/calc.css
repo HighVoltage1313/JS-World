@@ -1,0 +1,106 @@
+.calk {
+    display: flex;
+    padding: 25px;
+    margin: auto;
+    top: 20px;
+    background: rgb(15, 15, 15);
+    max-width: 400px;
+    max-height: 1000px;
+    color: white;
+    border-radius: 25px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    position: relative;
+}
+
+.calk .main {    
+    width: 60%;
+}
+
+.screen {
+    height: 25px;
+    padding: 10px;
+    margin: 30px 10px 20px 10px;
+    text-align: right;
+    overflow: hidden;
+}
+
+.calk .buttons {
+    display: grid; 
+    grid-template: 50px 50px 50px 50px 50px / 50px 50px 50px 50px;
+    grid-auto-rows: 100px;
+    gap: 6px;
+    justify-content: center;
+    user-select: none;
+}
+
+.buttons .btn {
+    background: rgb(108, 108, 108);
+    border-radius: 25px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 1.5s;
+}
+
+.buttons .btn:active {
+    background: rgb(255, 255, 255, 0.9);
+    transition: .15s;
+}
+
+.btn.orange {
+    background-color: #ef7816;
+}
+
+.btn.lightGrey {
+    background-color: rgb(199, 198, 198);
+    color: black;
+}
+
+.btn.zero {
+    grid-column: 1 / 3;
+}
+
+.side {
+    background: rgb(108, 108, 108);
+    width: 100%;
+    border-radius: 0 25px 25px 0;
+    margin-left: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.side .log {
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    overflow: auto;
+    overflow-y: scroll;
+    text-align: left;
+    direction: rtl;   
+    unicode-bidi: plaintext; 
+    position: absolute;
+    color: rgb(226, 225, 225);
+}
+
+.side .log::-webkit-scrollbar {
+    width: 3px;
+}
+
+.side .log::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: rgb(56, 55, 55);
+    border: 1px solid rgb(56, 55, 55);
+}
+
+.side .log::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: rgb(158, 158, 158);
+}
+
+.side .log p {
+    color: #ef7816;
+}
