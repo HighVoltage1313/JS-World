@@ -8,7 +8,6 @@
     display: block;
     margin: auto;
     padding: 20px;
-    min-height: 300px;
     width: fit-content;
     background-color: var(--bg-color);
     border-radius: 25px;
@@ -54,12 +53,11 @@
     font-style: normal;
     font-size: x-large;
     pointer-events: none;
+    margin: auto;
 }
 
 @keyframes jump {
-    0%  {}
     50% {transform:translateY(-6px)}
-    100%{transform:translateY(0px)}
     }
 
 .numCell.activeCell {
@@ -77,6 +75,10 @@
     color: var(--bg-color);
     font-size: xx-large;
     pointer-events: all;
+    animation-name: jump;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 3;
 }
 
 .correctNum {
@@ -111,3 +113,57 @@
     scale: 1.05;
     transition: .2s;
 }
+
+.numberGameEnd {
+    display: flex;
+    padding: 10px;
+    margin: auto;
+    gap: 10px;
+}
+
+.numberGameStartBtn {
+    width: 100px;
+    margin-right: 10px;
+} 
+
+.numberGameEnd > input {
+ width: 25px;
+ border: none;
+ outline: none;
+ background-color: var(--second-color);
+ color: var(--main-color);
+ text-align: center;
+}
+
+.numberGameEnd > label {
+    color: var(--main-color);
+}
+
+
+@keyframes jumpWin {
+    50% {transform:translateY(-6px); scale: 1.1;}
+    }
+    
+@keyframes jumpLose {
+    50% {transform:translateY(3px); scale: 1.1;}
+    }
+
+.numberGameResultWin {
+    background-color: #8fd624;
+    color: var(--bg-color);    
+    animation-name: jumpWin;
+    animation-duration: .5s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; 
+}
+
+
+.numberGameResultLose {
+    background-color: #d63024;
+    color: var(--main-color);  
+    animation-name: jumpLose;
+    animation-duration: 2.5s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; 
+}
+
