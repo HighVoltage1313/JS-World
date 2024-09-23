@@ -4,6 +4,7 @@ const grid = document.querySelector('.gridNumGame');
 let defaultCells = 25;
 let col = '5';
 let row = '5';
+let rowStep = 0;
 
 let secretCode = [];
 let cellArr = [];
@@ -11,7 +12,66 @@ let cellArr = [];
 let gameStatus = '0'; // 0 - Ended, 1 - Started
 let gameResult = ''; // 0 - Lose, 1 - Win
 
-gameParam();
+
+
+function createNewElement(newTag, newParent, newClassName, newText) {
+  const parent = document.querySelector(newParent);
+  const createElement = document.createElement(newTag);
+  createElement.className = newClassName;
+  createElement.textContent = newText;
+  parent.appendChild(createElement);
+}
+    
+createNewElement('div', '.numGuessing', 'numberGameResultLose', 'Try again');
+createNewElement('div', '.numGuessing', 'numberGameResultWin', 'Congrats'); 
+
+createNewElement('div', '.numGuessing', 'numberGameEnd');
+createNewElement('div', '.numberGameEnd', 'numberGameButton numberGameStartBtn', 'Start');
+createNewElement('label', '.numberGameEnd', 'label-1', 'Lines:');
+createNewElement('input', '.numberGameEnd', 'startParam numberGameRow');
+createNewElement('label', '.numberGameEnd', 'label-2', 'Numbers:');
+createNewElement('input', '.numberGameEnd', 'startParam numberGameColumn');
+
+createNewElement('div', '.numGuessing', 'numberGameButton numberGameButtonCheck', 'Check');
+
+let remArr = [  
+  '.numberGameResultLose', 
+  '.numberGameResultWin',
+  '.numberGameButtonCheck'];
+
+for (let element of remArr) {  
+  let elemExist = document.querySelector(element);
+  if (elemExist) {
+    removeElement(element);
+  }
+}
+
+const ngr = document.querySelector('.numberGameRow');
+const ngc = document.querySelector('.numberGameColumn');
+
+ngr.setAttribute('maxlength', '1');
+ngc.setAttribute('maxlength', '1');
+
+ngr.value = row;
+ngc.value = col;
+
+ngr.onkeydown = (event) => {
+  // Only allow if the e.key value is a number or if it's 'Backspace'
+  if(isNaN(event.key) && event.key !== 'Backspace') {
+    event.preventDefault();
+  }
+  
+};
+
+ngc.onkeydown = (event) => {
+  // Only allow if the e.key value is a number or if it's 'Backspace'
+  if(isNaN(event.key) && event.key !== 'Backspace') {
+    event.preventDefault();
+  }
+  
+};
+
+//gameParam();
 
 function gameStarting() { 
 
@@ -29,6 +89,8 @@ function gameStarting() {
           }
       };
   }
+
+  rowStep = 1;
 }
 
 function removeCells() {
@@ -37,41 +99,63 @@ function removeCells() {
     element.remove();
   });
 
-  console.log('Cells Removed');
 }
 
 function removeElement(elementToRemove) {
   const getElement = document.querySelectorAll(elementToRemove)
-  getElement.forEach((element) =>{
-    element.remove();
+  getElement.forEach((element) => {
+    element.style.display = 'none';
   });
 }
 
-function createNewElement(newTag, newParent, newClassName, newText) {
-  const parent = document.querySelector(newParent);
-  const createElement = document.createElement(newTag);
-  createElement.className = newClassName;
-  createElement.textContent = newText;
-  parent.appendChild(createElement);
+function undoElement(elementToRemove) {
+  const getElement = document.querySelectorAll(elementToRemove)
+  getElement.forEach((element) => {
+    element.style.display = '';
+  });
 }
 
 function gameParam () {
 
-  createNewElement('div', '.numGuessing', 'numberGameEnd');
   if (gameResult === '0') {
-    createNewElement('div', '.numGuessing', 'numberGameResultLose', 'Try again');
-  } else if (gameResult === '1') {
-    createNewElement('div', '.numGuessing', 'numberGameResultWin', 'Congrats');
+    document.querySelector('.numberGameResultLose').style.display = 'block';
+  } else if (gameResult === '1') {    
+    document.querySelector('.numberGameResultWin').style.display = 'block';
   }
 
   if (gameStatus === '0') {
-  createNewElement('div', '.numberGameEnd', 'numberGameButton numberGameStartBtn', 'Start');
-  createNewElement('label', '.numberGameEnd', 'label-1', 'Lines:');
-  createNewElement('input', '.numberGameEnd', 'startParam numberGameRow');
-  createNewElement('label', '.numberGameEnd', 'label-2', 'Numbers:');
-  createNewElement('input', '.numberGameEnd', 'startParam numberGameColumn');
-  } else if (gameStatus === '1') {
-    let remArr = ['.numberGameStartBtn', '.numberGameRow', '.numberGameColumn', '.label-1', '.label-2', '.numberGameEnd'];
+    document.querySelector('.numberGameButtonCheck').style.display = 'none';
+
+  let undoArr = [
+    '.numberGameStartBtn',
+    '.numberGameRow',
+    '.numberGameColumn',
+    '.label-1', 
+    '.label-2', 
+    '.numberGameEnd'];
+
+  for (let element of undoArr) {  
+    let elemNotExist = document.querySelector(element);
+    if (elemNotExist) {
+      undoElement(element);
+    }
+  } 
+  
+  console.log('gameResult = 1 gameStatus', gameResult, gameStatus);
+
+  } else if (gameStatus === '1') {   
+
+    document.querySelector('.numberGameButtonCheck').style.display = 'block';
+
+    let remArr = [
+      '.numberGameStartBtn', 
+      '.numberGameRow', 
+      '.numberGameColumn', 
+      '.label-1', 
+      '.label-2', 
+      '.numberGameEnd', 
+      '.numberGameResultLose', 
+      '.numberGameResultWin'];
 
     for (let element of remArr) {  
       let elemExist = document.querySelector(element);
@@ -79,9 +163,81 @@ function gameParam () {
         removeElement(element);
       }
     }
-    
-    createNewElement('div', '.numGuessing', 'numberGameButton', 'Check');
+
+    const checkButton = document.querySelector('.numberGameButtonCheck');
+    checkButton.addEventListener('click', () => {
+      let cells = getAllCells();
+      let correctNum = 0;
+      let activeArr = [];
+
+      cells.forEach((element) => {        
+        let isActive = element.classList.contains('activeCell');        
+        if (isActive && element.value != '') {
+          activeArr.push(element);
+        }   
+      })
+
+      if (activeArr.length == col) {
+
+      activeArr.forEach((element, index) => {
+        element.classList.remove('activeCell');
+        if (Number(element.value) === secretCode[index]) {
+          element.offsetWidth;
+          element.classList.add('correctPosNum');
+          correctNum++;
+          void element.offsetWidth;
+          console.log('Right number Position');
+        } else {            
+          for (let secretElem of secretCode) {
+            if (Number(element.value) === secretElem) {
+              element.offsetWidth;
+              element.classList.add('correctNum');
+              void element.offsetWidth;
+              console.log('Right number');
+            }
+          }
+        }
+      })
+
+      console.log(correctNum);
+      if (correctNum == col) {
+        gameStatus = '0';
+        gameResult = '1';
+        gameParam();
+        return;
+      }
+
+      if (rowStep != row) {   
+        
+       rowStep++;     
+
+        cells.forEach((element, index) => {
+            if ( rowStep * col > index && index > (rowStep * col) - 1 - col ) {
+              element.classList.add('activeCell');
+            }
+        })
+      } else if (rowStep == row) {
+        gameStatus = '0';
+        gameResult = '0';
+        gameParam();
+        return;
+      } 
+    }
+    console.log('Check button click', rowStep, row);
+    });
   }
+}
+
+function getAllCells () {
+  
+  // Get all cells
+  const cells = document.querySelectorAll('.numCell');
+  cells.forEach((element, index) => {
+    cellArr[index] = element;  
+  });
+
+  return cellArr;
+
 }
 
 const gameStart = document.querySelector('.numberGameStartBtn');
@@ -92,22 +248,16 @@ gameStart.addEventListener('click', () => {
   col = gameCol.value;
   row = gameRow.value;
   defaultCells = col * row;
-  console.log(defaultCells);
 
   removeCells();
 
   gameStarting();   
   
-  // Get all cells
-  const cells = document.querySelectorAll('.numCell');
-  cells.forEach((element, index) => {
-    cellArr[index] = element;  
-  });
-  console.log(cellArr);
+  getAllCells();
         
   for (let i = 0; i < col; i ++) {
     if (i < col) {
-      cellArr[i].classList += ' activeCell aC-' + i;
+      cellArr[i].classList += ' activeCell';
     }
   } 
 
@@ -115,17 +265,15 @@ gameStart.addEventListener('click', () => {
   for (let i = 0; i < col; i++) { 
     secretCode[i] = Math.floor(Math.random()* 9);
   }  
-  console.log(secretCode);
 
   gameStatus = '1';  
+  gameResult = '';
 
   gameParam();
 
   console.log('Game Started');
+  console.log(secretCode);
 
 });
 
 gameStarting(); 
-
-
-
