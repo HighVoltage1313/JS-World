@@ -140,8 +140,6 @@ function gameParam () {
       undoElement(element);
     }
   } 
-  
-  console.log('gameResult = 1 gameStatus', gameResult, gameStatus);
 
   } else if (gameStatus === '1') {   
 
@@ -186,20 +184,17 @@ function gameParam () {
           element.classList.add('correctPosNum');
           correctNum++;
           void element.offsetWidth;
-          console.log('Right number Position');
         } else {            
           for (let secretElem of secretCode) {
             if (Number(element.value) === secretElem) {
               element.offsetWidth;
               element.classList.add('correctNum');
               void element.offsetWidth;
-              console.log('Right number');
             }
           }
         }
       })
 
-      console.log(correctNum);
       if (correctNum == col) {
         gameStatus = '0';
         gameResult = '1';
@@ -223,7 +218,6 @@ function gameParam () {
         return;
       } 
     }
-    console.log('Check button click', rowStep, row);
     });
   }
 }
@@ -270,9 +264,6 @@ gameStart.addEventListener('click', () => {
   gameResult = '';
 
   gameParam();
-
-  console.log('Game Started');
-  console.log(secretCode);
 
 });
 

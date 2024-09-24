@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(/images/bg.webp);
+    background-image: url(../images/bg.webp);
     background-repeat: no-repeat;
     background-size: cover; 
     padding: 10% 15% 0 15%;
