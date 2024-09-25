@@ -75,6 +75,10 @@ img {
     color: #e7eaf6;
 }
 
+#button0 {
+    background-image: url(https://s3.amazonaws.com/cms.ipressroom.com/173/files/20233/6436fb312cfac278e61b35e3_Earth/Earth_hero.jpg);
+}
+
 #button1 {
     background-image: url(https://media.geeksforgeeks.org/wp-content/uploads/20230219213349/calculator.jpg);
 }
