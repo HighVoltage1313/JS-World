@@ -257,7 +257,7 @@ gameStart.addEventListener('click', () => {
 
   // Secret Code generation
   for (let i = 0; i < col; i++) { 
-    secretCode[i] = Math.floor(Math.random()* 9);
+    secretCode[i] = Math.floor(Math.random()* 10);
   }  
 
   gameStatus = '1';  

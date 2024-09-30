@@ -10,99 +10,122 @@
     <title>JS World</title>
 </head>
 <body>
-    <div id="front">
-        <div id="menu">
-            <ul class="menuList">
-                <li class="menuItem"><button id="button0"><div class="menuItemOver"><p>Home</p></div></button></li>
-                <li class="menuItem"><button id="button1"><div class="menuItemOver"><p>Calculator</p></div></button></li>
-                <li class="menuItem"><button id="button2"><div class="menuItemOver"><p>Tic Tac Toe</p></div></button></li>
-                <li class="menuItem"><button id="button3"><div class="menuItemOver"><p>Dice</p></div></button></li>
-                <li class="menuItem"><button id="button4"><div class="menuItemOver"><p>Number Guessing</p></div></button></li>
-                <li class="menuItem"><button id="button5"><div class="menuItemOver"><p>Weather</p></div></button></li>
-                <li class="menuItem"><button id="button6"><div class="menuItemOver"><p>Snake Game</p></div></button></li>
-                <li class="menuItem"><button id="button7"><div class="menuItemOver"><p>Quiz</p></div></button></li>
-                <li class="menuItem"><button id="button8"><div class="menuItemOver"><p>Galery</p></div></button></li>
-                <li class="menuItem"><button id="button9"><div class="menuItemOver"><p>Color Changer</p></div></button></li>
-            </ul>
-        </div>
-        <div id="content">
-            <p class="contentTitle">Content here</p>
-            <div class="contentpage homePage active">
-                <div class="sidebar">
-                    
-                </div>
-                <div class="container">
-                    
-                </div>
+    <div class="wrapper">
+    <header>
+        <div class="header__grid">
+            <div class="header__element card-element">
+
             </div>
-            <div class="contentPage page1">
-                <div class="calk">
-                    <div class="main">
-                        <p class="screen">0</p>
-                        <div class="buttons">
-                            <div class="btn ac lightGrey">AC</div>
-                            <div class="btn plusMinus lightGrey">+/-</div>
-                            <div class="btn percent lightGrey">%</div>
-                            <div class="btn operator orange">/</div>
-                            <div class="btn num">7</div>
-                            <div class="btn num">8</div>
-                            <div class="btn num">9</div>
-                            <div class="btn operator orange">X</div>
-                            <div class="btn num">4</div>
-                            <div class="btn num">5</div>
-                            <div class="btn num">6</div>
-                            <div class="btn operator orange">-</div>
-                            <div class="btn num">1</div>
-                            <div class="btn num">2</div>
-                            <div class="btn num">3</div>
-                            <div class="btn operator orange">+</div>
-                            <div class="btn num zero">0</div>
-                            <div class="btn num point">.</div>
-                            <div class="btn equal orange">=</div>
-                        </div>
-                    </div>
-                    <div class="side">
-                        <p class="log"></p>
-                    </div>
-                <link rel="stylesheet" href="styles/calc.css">
-                <script src="scr/calk.js"></script>
-                </div>
-            </div>
-            <div class="contentPage page2">
-                Page 2
-            </div>
-            <div class="contentPage page3">
-                Page 3
-            </div>
-            <div class="contentPage page4">               
-                <div class="numGuessing">
-                    <p>GUESS THE NUMBER</p>
-                    <div class="gridNumGame">
+            <div class="header__element card-element card-blue">
+                <div class="chat">
+                    <div class="chat__screen">
 
                     </div>
+                    <input type="text" class="chat__name">
+                    <input type="text" class="chat__input">
                 </div>
-                <link rel="stylesheet" href="styles/numGuess.css">
-                <script src="scr/numGuess.js"></script>
             </div>
-            <div class="contentPage page5">
-                Page 5
+            <div class="header__element card-element">
+
             </div>
-            <div class="contentPage page6">
-                Page 6
-            </div>
-            <div class="contentPage page7">
-                Page 7
-            </div>
-            <div class="contentPage page7">
-                Page 8
-            </div>
-            <div class="contentPage page8">
-                Page 9
+            <div class="header__element card-element">
+
             </div>
         </div>
-    </div> 
 
-    <script src="scr/script.js"></script>
+        <div class="nav card-element">
+            <div class="nav__main">
+                <a class="nav__element">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="basic">
+            <div class="basic__box card-element big card-blue">
+                <h3>Basic</h3>
+                <p>Pet-Projects created while learning basics of Java Script</p>
+                <a  href="/basic.html" class="bigLink"></a>
+            </div>
+            <div class="basic__box card-element calculator">
+                <a href="/basic.html?calculator" class="basic__box-link"></a>
+                <p>Calculator</p>
+                <div class="bg-img"></div>
+            </div>
+            <div class="basic__box card-element numberGuessing">
+                <a href="/basic.html" class="basic__box-link"></a>
+                <p>Number Guessing</p>
+            </div>
+            <div class="basic__box card-element card-blank">
+                <div id="timer">
+                    <p>New Year 2025</p>
+                    <div class="time-remaining">
+                        00 D 00 H 00 M 00 S
+                    </div>
+                    <div class="time-zone">
+                        Your time Zone UDS +2
+                    </div>
+
+                    <script src="scr/timer.js"></script>
+                </div>
+            </div>
+            <div class="basic__box card-element passwordGenerator">
+                <a href class="basic__box-link"></a>
+                <p>Password Generator</p>
+            </div>
+            <div class="basic__box card-element quiz">
+                <a href class="basic__box-link"></a>
+                <p>Quiz</p>
+            </div>
+            <div class="basic__box card-element ticTacToe">
+                <a href class="basic__box-link"></a>
+                <p>Tic Tac Toe</p>
+            </div>
+            <div class="basic__box card-element currency card-blue">
+                <a href class="basic__box-link"></a>
+                <p>Currency</p>
+            </div>
+            <div class="basic__box card-element snakeGame">
+                <a href class="basic__box-link"></a>
+                <p>Snake Game</p>
+            </div>
+            <div class="basic__box card-element gallery">
+                <a href class="basic__box-link"></a>
+                <p>Gallery</p>
+            </div>
+            <div class="basic__box card-element sorting">
+                <a href class="basic__box-link"></a>
+                <p>Sorting</p>
+            </div>
+            <div class="basic__box card-element weather card-blue">
+                <a href class="basic__box-link"></a>
+                <p>Weather</p>
+            </div>
+            <div class="basic__box card-element dice">
+                <p>Dice</p>
+                <div class="dice__points">
+                    <div class="dice__point d1"></div>
+                    <div class="dice__point d2"></div>
+                    <div class="dice__point d3"></div>
+                    <div class="dice__point d4"></div>
+                    <div class="dice__point d5"></div>
+                    <div class="dice__point d6"></div>
+                    <div class="dice__point d7"></div>
+                    <div class="dice__point d8"></div>
+                    <div class="dice__point d9"></div>
+                </div>
+                <script src="/scr/dice.js"></script>
+            </div>
+        </div>
+
+        <div class="advanced">
+            <p>Advanced level block</p>
+        </div>
+    </div>
+
+    <div class="footer">
+
+    </div>
+    </div>
 </body>
 </html>
-

@@ -6,7 +6,9 @@
 
 .numGuessing {
     display: block;
-    margin: auto;
+    position: relative;
+    top: 20px;
+    margin: 20px auto;
     padding: 20px;
     width: fit-content;
     background-color: var(--bg-color);
@@ -14,10 +16,12 @@
     transition: 1s;
     align-content: center;
     box-shadow: 1px 1px 5px 1px rgb(0, 0, 0, .5);
+
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
+    text-align: center;
 }
 
 .numGuessing p {

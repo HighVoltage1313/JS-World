@@ -1,0 +1,18 @@
+.page10 > .container {
+    background-color: white;
+    display: flex;
+    width: min-content;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.pillar__Block {
+    height: 300px;
+    width: 50px;
+    background-color: brown;
+}
+
+.pillar__input {
+    width: 50px;
+    border: none;
+}

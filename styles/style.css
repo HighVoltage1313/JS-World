@@ -1,14 +1,24 @@
-body {
+* {
+    box-sizing: border-box;
+}
+
+html, body {
     margin: 0;
     padding: 0;
-    background-image: url(../images/bg.webp);
+    height: 100%;
+    font-family: 'Oswald';
+    font-style: normal;
+}
+
+body {
+    background-color: #292A2E;
     background-repeat: no-repeat;
     background-size: cover; 
-    padding: 10% 15% 0 15%;
+    background-attachment: fixed;
     
 }
 
-button, input[type="submit"], input[type="reset"] {
+button, input {
 	background: none;
 	color: inherit;
 	border: none;
@@ -26,148 +36,352 @@ p {
     margin: 0;
 }
 
-img {
-    max-width: 500px;
-    max-height: 500px;
-}
-
-#front {
-    background-color: #e7eaf6;
-    box-shadow:0px 0px 10px 1px rgb(56, 55, 55);
-    min-height: 600px;
-}
-
-.menuList {
-    justify-content: center;
-    display: flex;
+a {
     margin: 0;
     padding: 0;
-    flex-direction: row;
-    list-style: none;
+    text-decoration: none;
+    color: inherit;
 }
 
-.menuItem {    
-    flex: 1;
-    transition: 1s;
-    display: flex;
+.card-element {
+    background-color: #F2F1E9;
+    border-radius: 25px;
+    box-shadow: -10px 10px 20px -10px rgba(0,0,0,0.75);
+    transition: .5s;    
     overflow: hidden;
+}
+
+.card-blue {
+    background-color: #024AE5;    
+    color: #F2F1E9;
+}
+
+.card-blank {
+    background: none;
+    box-shadow: none;
+}
+
+.wrapper {    
+    max-width: 1300px;
+    margin: auto;
+}
+
+header {
+    margin: 20px auto;
+}
+
+.header__grid {
+    height: 250px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto;
+}
+
+.header__element {
+    min-width: 100px;
+}
+
+.header__element:nth-child(1) {
+    grid-column: span 2;
+}
+
+.header__element:nth-child(2) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.chat {
+    height: 100%;
+    width: 100%;
+    color: #F2F1E9;
+}
+
+.chat__screen {
+    margin: 20px auto;
+    height: 60%;
+    width: 94%;
+    border-bottom: 1px solid #F2F1E9; 
+    border-radius: 25px;
+}
+
+.chat__name {
+    width: 20%;
+    margin-left: 20px;
+}
+
+.chat__input {
+    width: 60%;    
+    margin-right: 20px;
+}
+
+.nav {
+    height: 25px;
+    margin-top: 20px;
+}
+
+.nav__main {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.nav__element {
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.nav__element::before {
+    display: block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #024ae5;
+    float: left;
+}
+
+.basic {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+}
+
+.basic__box {
+    position: relative;
+    min-height: 150px;
+    min-width: 150px;
+    display: flex;    
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    overflow: hidden;
+    font-size: large;
+    font-weight: 700;
+}
+
+.basic__box.big {
+    display: flex;
+    background-image: linear-gradient(rgba(216, 26, 26, 0) 0%, rgba(2, 74, 229, 1) 80%), 
+    url(https://www.in2code.de/fileadmin/_processed_/0/b/csm_code_javascript_49d002a67e.webp);
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+    color: #F2F1E9;
     position: relative;
 }
 
-.menuItem:hover {
-    flex: 2;
+.big > h3 {    
+    align-self: flex-start;
+    margin: 40px 40px;
+    font-size: xx-large;
+    z-index: 1;
+    position: relative;
 }
 
-.menuItem:hover .menuItemOver {
-    transform: translateY(80%); 
+.big > p {    
+    position: relative;
+    font-size: small;
+    font-weight: 300;
+    bottom: 20px;
+    z-index: 1;
 }
 
-.menuItem:hover p {
-    top: 3px;
-    transition: 1s;
-}
-
-.menuItem button {     
-    width: 100%;
-    height: 120px;
-    background-color: #38598b;
-    transition: 1s;
-    color: #e7eaf6;
-}
-
-#button0 {
-    background-image: url(https://s3.amazonaws.com/cms.ipressroom.com/173/files/20233/6436fb312cfac278e61b35e3_Earth/Earth_hero.jpg);
-}
-
-#button1 {
-    background-image: url(https://media.geeksforgeeks.org/wp-content/uploads/20230219213349/calculator.jpg);
-}
-
-
-#button2 {
-    background-image: url(https://play-lh.googleusercontent.com/KZTO1L6r8CzWlg2InJoU_ndRAuvYiaS-35MyYdDPeeVCPNVfM9SBY2qRGjvvADmDIR8);
-}
-
-
-#button3 {
-    background-image: url(https://atlas-content-cdn.pixelsquid.com/stock-images/dice-B5mdRR0-600.jpg);
-}
-
-
-#button4 {
-    background-image: url(https://i.pinimg.com/736x/14/5a/d8/145ad8a8af3318681a705f281a44c3a3.jpg);
-}
-
-
-#button5 {
-    background-image: url(https://t4.ftcdn.net/jpg/02/66/38/15/360_F_266381525_alVrbw15u5EjhIpoqqa1eI5ghSf7hpz7.jpg);
-}
-
-
-#button6 {
-    background-image: url(https://play-lh.googleusercontent.com/S9ZmNx5LYCj7h2IJZb0QqkXAGki6JRaMQ25ycKfrngDkNBA6jk7rM87YcAH1prV_OA);
-}
-
-
-#button7 {
-    background-image: url(https://media.geeksforgeeks.org/wp-content/uploads/20230803112200/Quiz.webp);
-}
-
-
-#button8 {
-    background-image: url(https://img.freepik.com/premium-psd/collection-art-pieces-wall_53876-65865.jpg);
-}
-
-
-#button9 {
-    background-image: url(https://img.freepik.com/free-photo/layout-pencils-lgbt-colors_23-2148120360.jpg);
-}
-
-.menuItem button:hover {
-    background-color: #020f6e; 
-    transition: 1s;
-}
-
-.menuItemOver {
-    background-color: rgb(212, 63, 25);
+.bigLink {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     height: 100%;
-    transform: translateY(0%);
-    transition: transform 1s ease;
-    z-index: 1;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    text-align: center; 
+    width: 100%;
+    z-index: 2;
 }
 
+.calculator {
+    background-image: linear-gradient(rgba(216, 26, 26, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    url(https://media.geeksforgeeks.org/wp-content/uploads/20230219213349/calculator.jpg);
+    background-size: cover;
+    background-position: center;
+}
 
-.menuItemOver p {
-    top: 50%;  
+.numberGuessing {
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    url(https://op.ua/images/common/4/3/8/2/5ff2ff74acb12.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.passwordGenerator {
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    url(https://online.champlain.edu/sites/online/files/styles/width_1600/public/2021-08/blog_header-_when_is_a_password_good_-_1900x900.jpg?itok=SRx8bc9f);
+    background-size: cover;
+    background-position: center;
+}
+
+.quiz {
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    url(https://thumbs.dreamstime.com/b/male-hand-holding-megaphone-quiz-time-speech-bubble-loudspeaker-banner-business-marketing-advertising-vector-125104939.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.ticTacToe {
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    url(https://play-lh.googleusercontent.com/5ENdgpFsRhQt9y_ySp9UK_p-CL0TmhSwW5pKmmzzIW0OLFR3EvAtzAGm6c_IkkfgVg);
+    background-size: cover;
+    background-position: center;
+}
+
+.snakeGame {
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    url(https://play-lh.googleusercontent.com/S9ZmNx5LYCj7h2IJZb0QqkXAGki6JRaMQ25ycKfrngDkNBA6jk7rM87YcAH1prV_OA);
+    background-size: cover;
+    background-position: center;
+    background-position-y: 20%;
+}
+
+.gallery {
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    url(https://onecms-res.cloudinary.com/image/upload/s--eMBxXhRK--/f_auto,q_auto/c_fill,g_auto,h_622,w_830/v1/tdy-migration/15073662-gallery-photo-interior-2-data.jpg?itok=NH_Jjwju);
+    background-size: cover;
+    background-position: center;
+}
+
+.sorting {
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    url(https://www.crio.do/blog/content/images/2022/02/Sorting-Algorithms.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.weather {
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(2, 74, 229, 1) 50%), 
+    url(https://images.nationalgeographic.org/image/upload/t_edhub_resource_key_image/v1638886301/EducationHub/photos/lightning-bolts.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.currency {
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(2, 74, 229, 1) 50%), 
+    url(https://theraise.eu/wp-content/uploads/2023/08/shutterstock-367050494.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.basic__box:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.basic__box:nth-child(2),
+.basic__box:nth-child(3),
+.basic__box:nth-child(4),
+.basic__box:nth-child(5),
+.basic__box:nth-child(6),
+.basic__box:nth-child(9),
+.basic__box:nth-child(10),
+.basic__box:nth-child(11) {
+    grid-column: span 2;
+}
+
+.basic__box .card-element {
+    position: relative;
+}
+
+.basic__box-link {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
     position: absolute;
+}
+
+.basic .card-element:hover:not(.dice) {
+    transform: scale(1.02);
+    transition: .5s;
+}
+
+#timer {
+    height: 100%;
+    padding: 12% 0;
+    color: #F2F1E9;
+    text-align: center;
+    user-select: none;
+}
+
+.time-zone {
+    font-size: small;
+    font-weight: 100;
+}
+
+.time-remaining {
+    font-size: x-large;
+    font-weight: 700;
+}
+
+@keyframes roll {
+    25% {transform: rotate(600deg) scale(40%);}
+    50% {transform: rotate(1000deg) scale(50%);}
+    100% {transform: rotate(1800deg) scale(100%);}
+}
+
+.dice-roll {
     transition: 1s;
+    animation-name: roll;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
 }
 
-.contentTitle {
-    text-align: center;
-    align-content: center;
-    background-color: #ef7816;
-    height: 35px;
-    margin: 0;
+.dice > p {
+    position: absolute;
 }
 
-.contentPage {
+.dice__points {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    grid-template-areas: 
+        "d1 d2 d3"
+        "d4 d5 d6"
+        "d7 d8 d9";
+    gap: 20px;
+}
+
+.dice__point {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #292A2E;
+}
+
+.dice__point.d1 {grid-area: d1;}
+.dice__point.d2 {grid-area: d2;}
+.dice__point.d3 {grid-area: d3;}
+.dice__point.d4 {grid-area: d4;}
+.dice__point.d5 {grid-area: d5;}
+.dice__point.d6 {grid-area: d6;}
+.dice__point.d7 {grid-area: d7;}
+.dice__point.d8 {grid-area: d8;}
+.dice__point.d9 {grid-area: d9;}
+
+.advanced {
+    min-height: 400px;
+    width: 100%;
+    border: 1px solid #F2F1E9;
+    border-radius: 25px;
+    margin: 20px auto;
+    align-items: center;
     justify-content: center;
-    text-align: center;
-    display: none;
-    padding: 25px;
+    display: flex;
 }
 
-.active {
-    display: block;
+.advanced > p {
+    color: #F2F1E9;
+    font-weight: 800;
+    font-size: xx-large;    
 }
-
-
