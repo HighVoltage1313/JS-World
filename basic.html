@@ -42,49 +42,96 @@
     </header>
 
     <div class="container">
-        <div class="contentPage">
-            <div class="calk">
-                <div class="main">
-                    <p class="screen">0</p>
-                    <div class="buttons">
-                        <div class="btn ac lightGrey">AC</div>
-                        <div class="btn plusMinus lightGrey">+/-</div>
-                        <div class="btn percent lightGrey">%</div>
-                        <div class="btn operator orange">/</div>
-                        <div class="btn num">7</div>
-                        <div class="btn num">8</div>
-                        <div class="btn num">9</div>
-                        <div class="btn operator orange">X</div>
-                        <div class="btn num">4</div>
-                        <div class="btn num">5</div>
-                        <div class="btn num">6</div>
-                        <div class="btn operator orange">-</div>
-                        <div class="btn num">1</div>
-                        <div class="btn num">2</div>
-                        <div class="btn num">3</div>
-                        <div class="btn operator orange">+</div>
-                        <div class="btn num zero">0</div>
-                        <div class="btn num point">.</div>
-                        <div class="btn equal orange">=</div>
-                    </div>
+        <div class="container__nav">
+            <div class="container__pages">
+                <div class="page card-element">
+                    <a href="?calculator"></a>
+                    <p>Calculator</p>
                 </div>
-                <div class="side">
-                    <p class="log"></p>
+                <div class="page card-element">
+                    <a href="?numberGuessing"></a>
+                    <p>Number Guessing</p>
                 </div>
-            <link rel="stylesheet" href="styles/calc.css">
-            <script src="scr/calk.js"></script>
+                <div class="page card-element">
+                    <a href="?passwordGenerator"></a>
+                    <p>Password Generator</p>
+                </div>
+                <div class="page card-element">
+                    <a href="?quiz"></a>
+                    <p>Quiz</p>
+                </div>
+                <div class="page card-element">
+                    <a href="?ticTacToe"></a>
+                    <p>Tic Tac Toe</p>
+                </div>
+                <div class="page card-element">
+                    <a href="?currency"></a>
+                    <p>Currency</p>
+                </div>
+                <div class="page card-element">
+                    <a href="?snakeGame"></a>
+                    <p>Snake Game</p>
+                </div>
+                <div class="page card-element">
+                    <a href="?gallery"></a>
+                    <p>Gallery</p>
+                </div>
+                <div class="page card-element">
+                    <a href="?sorting"></a>
+                    <p>Sorting</p>
+                </div>
+                <div class="page card-element">
+                    <a href="?weather"></a>
+                    <p>Weather</p>
+                </div>
             </div>
         </div>
 
-        <div class="contentPage">               
-            <div class="numGuessing">
-                <p>GUESS THE NUMBER</p>
-                <div class="gridNumGame">
-
+        <div class="block-one">
+            <div class="contentPage calculator">
+                <div class="calk">
+                    <div class="main">
+                        <p class="screen">0</p>
+                        <div class="buttons">
+                            <div class="btn ac lightGrey">AC</div>
+                            <div class="btn plusMinus lightGrey">+/-</div>
+                            <div class="btn percent lightGrey">%</div>
+                            <div class="btn operator orange">/</div>
+                            <div class="btn num">7</div>
+                            <div class="btn num">8</div>
+                            <div class="btn num">9</div>
+                            <div class="btn operator orange">X</div>
+                            <div class="btn num">4</div>
+                            <div class="btn num">5</div>
+                            <div class="btn num">6</div>
+                            <div class="btn operator orange">-</div>
+                            <div class="btn num">1</div>
+                            <div class="btn num">2</div>
+                            <div class="btn num">3</div>
+                            <div class="btn operator orange">+</div>
+                            <div class="btn num zero">0</div>
+                            <div class="btn num point">.</div>
+                            <div class="btn equal orange">=</div>
+                        </div>
+                    </div>
+                    <div class="side">
+                        <p class="log"></p>
+                    </div>
+                <link rel="stylesheet" href="styles/calc.css">
+                <script src="scr/calk.js"></script>
                 </div>
             </div>
-            <link rel="stylesheet" href="styles/numGuess.css">
-            <script src="scr/numGuess.js"></script>
+
+            <div class="contentPage numberGuessing">               
+                <div class="numGuessing">
+                    <p>GUESS THE NUMBER</p>
+                    <div class="gridNumGame">
+
+                    </div>
+                </div>
+                <link rel="stylesheet" href="styles/numGuess.css">
+                <script src="scr/numGuess.js"></script>
+            </div>
         </div>
     </div>
 
@@ -92,5 +139,7 @@
 
     </div>
     </div>
+    
+    <script src="scr/script.js"></script>
 </body>
 </html>

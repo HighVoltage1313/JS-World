@@ -202,42 +202,42 @@ header {
     z-index: 2;
 }
 
-.calculator {
+.basic__box.calculator {
     background-image: linear-gradient(rgba(216, 26, 26, 0) 0%, rgba(242, 241, 233, 1) 50%), 
     url(https://media.geeksforgeeks.org/wp-content/uploads/20230219213349/calculator.jpg);
     background-size: cover;
     background-position: center;
 }
 
-.numberGuessing {
+.basic__box.numberGuessing {
     background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
     url(https://op.ua/images/common/4/3/8/2/5ff2ff74acb12.png);
     background-size: cover;
     background-position: center;
 }
 
-.passwordGenerator {
+.basic__box.passwordGenerator {
     background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
     url(https://online.champlain.edu/sites/online/files/styles/width_1600/public/2021-08/blog_header-_when_is_a_password_good_-_1900x900.jpg?itok=SRx8bc9f);
     background-size: cover;
     background-position: center;
 }
 
-.quiz {
+.basic__box.quiz {
     background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
     url(https://thumbs.dreamstime.com/b/male-hand-holding-megaphone-quiz-time-speech-bubble-loudspeaker-banner-business-marketing-advertising-vector-125104939.jpg);
     background-size: cover;
     background-position: center;
 }
 
-.ticTacToe {
+.basic__box.ticTacToe {
     background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
     url(https://play-lh.googleusercontent.com/5ENdgpFsRhQt9y_ySp9UK_p-CL0TmhSwW5pKmmzzIW0OLFR3EvAtzAGm6c_IkkfgVg);
     background-size: cover;
     background-position: center;
 }
 
-.snakeGame {
+.basic__box.snakeGame {
     background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
     url(https://play-lh.googleusercontent.com/S9ZmNx5LYCj7h2IJZb0QqkXAGki6JRaMQ25ycKfrngDkNBA6jk7rM87YcAH1prV_OA);
     background-size: cover;
@@ -245,28 +245,28 @@ header {
     background-position-y: 20%;
 }
 
-.gallery {
+.basic__box.gallery {
     background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
     url(https://onecms-res.cloudinary.com/image/upload/s--eMBxXhRK--/f_auto,q_auto/c_fill,g_auto,h_622,w_830/v1/tdy-migration/15073662-gallery-photo-interior-2-data.jpg?itok=NH_Jjwju);
     background-size: cover;
     background-position: center;
 }
 
-.sorting {
+.basic__box.sorting {
     background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
     url(https://www.crio.do/blog/content/images/2022/02/Sorting-Algorithms.png);
     background-size: cover;
     background-position: center;
 }
 
-.weather {
+.basic__box.weather {
     background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(2, 74, 229, 1) 50%), 
     url(https://images.nationalgeographic.org/image/upload/t_edhub_resource_key_image/v1638886301/EducationHub/photos/lightning-bolts.jpg);
     background-size: cover;
     background-position: center;
 }
 
-.currency {
+.basic__box.currency {
     background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(2, 74, 229, 1) 50%), 
     url(https://theraise.eu/wp-content/uploads/2023/08/shutterstock-367050494.jpg);
     background-size: cover;
@@ -302,7 +302,7 @@ header {
     position: absolute;
 }
 
-.basic .card-element:hover:not(.dice) {
+.container .card-element:hover:not(.dice) {
     transform: scale(1.02);
     transition: .5s;
 }
@@ -384,4 +384,87 @@ header {
     color: #F2F1E9;
     font-weight: 800;
     font-size: xx-large;    
+}
+
+.contentPage {
+    display: none;
+}
+
+.contentPage.active {
+    display: block;
+}
+
+.container__pages {
+    width: 100%;
+    display: grid;
+    gap: 7px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.container__pages .page {
+    display: flex;
+    height: 60px;
+    min-width: 100px;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    transition: .5s;
+    overflow: hidden;
+}
+
+@keyframes rotate {
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+.page.active::before {
+    content: '';
+    padding-top: 100%;
+    width: 20%;
+    background-color: #F2F1E9;
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    position: absolute;
+}
+
+.page.active::after {
+    content: '';
+    background-color: #024AE5;
+    inset: 2px;
+    position: absolute;
+    border-radius: 25px;
+    transition: 1s;
+}
+
+.page a {
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+}
+
+.page p {
+    z-index: 1;
+}
+
+.page.active {
+    background-color: #024AE5;
+    color: #F2F1E9;
+    position: relative;
+}
+
+.block-one {
+    min-height: 400px;
+    width: 100%;
+    border: 1px solid #F2F1E9;
+    border-radius: 25px;
+    margin: 20px auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
