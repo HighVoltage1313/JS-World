@@ -302,7 +302,7 @@ header {
     position: absolute;
 }
 
-.container .card-element:hover:not(.dice) {
+.basic .card-element:hover:not(.dice) {
     transform: scale(1.02);
     transition: .5s;
 }
@@ -412,6 +412,12 @@ header {
     text-align: center;
     transition: .5s;
     overflow: hidden;
+}
+
+.container__pages .page:hover {
+    background-color: #024ae5;
+    transition: .5s;
+    color: #F2F1E9;
 }
 
 @keyframes rotate {

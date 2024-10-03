@@ -1,0 +1,100 @@
+#ticTacToe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#cf3030, #262d83);
+    height: 400px;
+    width: 400px;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+@keyframes rotate {
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes symbAnim {
+    0% {transform: scale(100%);}
+    50% {transform: scale(150%);}
+    100% {transform: scale(100%);}
+}
+
+#ticTacToe::before {
+    content: '';
+    position: absolute;
+    height: 150%;
+    width: 150%;
+    animation: rotate 1.5s infinite ease-in-out;
+    background: linear-gradient(#ff2222, #2335ff);
+}
+
+#ticTacToe::after {
+    content: '';
+    position: absolute;
+    inset: 3px; 
+    border-radius: 25px;
+    background: linear-gradient(#cf3030, #262d83);
+}
+
+.ticTacToe__grid {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    gap: 3px;
+    margin: auto;
+}
+
+.ticTacToe__cell {
+    height: 100px;
+    width: 100px;
+    border-radius: 25%;
+    border: 1px solid #2335ff;
+    background: rgb(38, 45, 131, .5);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+}
+
+.ticTacToe__button {
+    display: flex;
+    height: 50px;
+    width: 150px;
+    z-index: 1;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ff2222;
+    border-radius: 25px;
+    margin-top: 20px;
+    user-select: none;
+    color: white;
+    transition: 1s;
+    background: rgba(131, 38, 38, 0.5);
+}
+
+.ticTacToe__button:hover {
+    background: #cf3030;
+    transition: 1s;
+}
+
+.ticTacToe__cell .sX,
+.ticTacToe__cell .sO {
+    font-size: xxx-large;
+    font-weight: 900;
+    text-shadow: 1px 1px 1px #ffffff;
+}
+
+.ticTacToe__cell .sX {
+    color: #ff2222;
+}
+
+.ticTacToe__cell .sO {
+    color: #2335ff;
+}
