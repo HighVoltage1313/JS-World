@@ -1,194 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="images/js.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="images/js.png" type="image/x-icon" />
     <title>JS World</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <div class="wrapper">
-    <header>
+      <header>
         <div class="header__grid">
-            <div class="header__element card-element">
-
+          <div class="header__element card-element"></div>
+          <div class="header__element card-element card-blue">
+            <div class="chat">
+              <div class="chat__screen"></div>
+              <input type="text" class="chat__name" />
+              <input type="text" class="chat__input" />
             </div>
-            <div class="header__element card-element card-blue">
-                <div class="chat">
-                    <div class="chat__screen">
-
-                    </div>
-                    <input type="text" class="chat__name">
-                    <input type="text" class="chat__input">
-                </div>
-            </div>
-            <div class="header__element card-element">
-
-            </div>
-            <div class="header__element card-element">
-
-            </div>
+          </div>
+          <div class="header__element card-element"></div>
+          <div class="header__element card-element"></div>
         </div>
 
         <div class="nav card-element">
-            <div class="nav__main">
-                <a href="index.html" class="nav__element">Home</a>
-                <a class="nav__element">Basic</a>
-            </div>
+          <div class="nav__main">
+            <a href="index.html" class="nav__element">Home</a>
+            <a class="nav__element">Basic</a>
+          </div>
         </div>
-    </header>
+      </header>
 
-    <div class="container">
+      <div class="container">
         <div class="container__nav">
-            <div class="container__pages">
-                <div class="page card-element">
-                    <a href="?calculator"></a>
-                    <p>Calculator</p>
-                </div>
-                <div class="page card-element">
-                    <a href="?numberGuessing"></a>
-                    <p>Number Guessing</p>
-                </div>
-                <div class="page card-element">
-                    <a href="?passwordGenerator"></a>
-                    <p>Password Generator</p>
-                </div>
-                <div class="page card-element">
-                    <a href="?quiz"></a>
-                    <p>Quiz</p>
-                </div>
-                <div class="page card-element">
-                    <a href="?ticTacToe"></a>
-                    <p>Tic Tac Toe</p>
-                </div>
-                <div class="page card-element">
-                    <a href="?currency"></a>
-                    <p>Currency</p>
-                </div>
-                <div class="page card-element">
-                    <a href="?snakeGame"></a>
-                    <p>Snake Game</p>
-                </div>
-                <div class="page card-element">
-                    <a href="?gallery"></a>
-                    <p>Gallery</p>
-                </div>
-                <div class="page card-element">
-                    <a href="?sorting"></a>
-                    <p>Sorting</p>
-                </div>
-                <div class="page card-element">
-                    <a href="?weather"></a>
-                    <p>Weather</p>
-                </div>
+          <div class="container__pages">
+            <div class="page card-element">
+              <a href="#calculator"></a>
+              <p>Calculator</p>
             </div>
+            <div class="page card-element">
+              <a href="#numberGuessing"></a>
+              <p>Number Guessing</p>
+            </div>
+            <div class="page card-element">
+              <a href="#passwordGenerator"></a>
+              <p>Password Generator</p>
+            </div>
+            <div class="page card-element">
+              <a href="#quiz"></a>
+              <p>Quiz</p>
+            </div>
+            <div class="page card-element">
+              <a href="#ticTacToe"></a>
+              <p>Tic Tac Toe</p>
+            </div>
+            <div class="page card-element">
+              <a href="#currency"></a>
+              <p>Currency</p>
+            </div>
+            <div class="page card-element">
+              <a href="#snakeGame"></a>
+              <p>Snake Game</p>
+            </div>
+            <div class="page card-element">
+              <a href="#gallery"></a>
+              <p>Gallery</p>
+            </div>
+            <div class="page card-element">
+              <a href="#sorting"></a>
+              <p>Sorting</p>
+            </div>
+            <div class="page card-element">
+              <a href="#weather"></a>
+              <p>Weather</p>
+            </div>
+          </div>
         </div>
 
         <div class="block-one">
-            <div class="contentPage calculator">
-                <div class="calk">
-                    <div class="main">
-                        <p class="screen">0</p>
-                        <div class="buttons">
-                            <div class="btn ac lightGrey">AC</div>
-                            <div class="btn plusMinus lightGrey">+/-</div>
-                            <div class="btn percent lightGrey">%</div>
-                            <div class="btn operator orange">/</div>
-                            <div class="btn num">7</div>
-                            <div class="btn num">8</div>
-                            <div class="btn num">9</div>
-                            <div class="btn operator orange">X</div>
-                            <div class="btn num">4</div>
-                            <div class="btn num">5</div>
-                            <div class="btn num">6</div>
-                            <div class="btn operator orange">-</div>
-                            <div class="btn num">1</div>
-                            <div class="btn num">2</div>
-                            <div class="btn num">3</div>
-                            <div class="btn operator orange">+</div>
-                            <div class="btn num zero">0</div>
-                            <div class="btn num point">.</div>
-                            <div class="btn equal orange">=</div>
-                        </div>
-                    </div>
-                    <div class="side">
-                        <p class="log"></p>
-                    </div>
-                <link rel="stylesheet" href="styles/calc.css">
-                <script src="scr/calk.js"></script>
+          <div class="contentPage calculator">
+            <div class="calk">
+              <div class="main">
+                <p class="screen">0</p>
+                <div class="buttons">
+                  <div class="btn ac lightGrey">AC</div>
+                  <div class="btn plusMinus lightGrey">+/-</div>
+                  <div class="btn percent lightGrey">%</div>
+                  <div class="btn operator orange">/</div>
+                  <div class="btn num">7</div>
+                  <div class="btn num">8</div>
+                  <div class="btn num">9</div>
+                  <div class="btn operator orange">X</div>
+                  <div class="btn num">4</div>
+                  <div class="btn num">5</div>
+                  <div class="btn num">6</div>
+                  <div class="btn operator orange">-</div>
+                  <div class="btn num">1</div>
+                  <div class="btn num">2</div>
+                  <div class="btn num">3</div>
+                  <div class="btn operator orange">+</div>
+                  <div class="btn num zero">0</div>
+                  <div class="btn num point">.</div>
+                  <div class="btn equal orange">=</div>
                 </div>
+              </div>
+              <div class="side">
+                <p class="log"></p>
+              </div>
+              <link rel="stylesheet" href="styles/calc.css" />
+              <script src="scr/calk.js"></script>
+            </div>
+          </div>
+
+          <div class="contentPage numberGuessing">
+            <div class="numGuessing">
+              <p>GUESS THE NUMBER</p>
+              <div class="gridNumGame"></div>
+            </div>
+            <link rel="stylesheet" href="styles/numGuess.css" />
+            <script src="scr/numGuess.js"></script>
+          </div>
+
+          <div class="contentPage passwordGenerator"></div>
+
+          <div class="contentPage quiz"></div>
+
+          <div class="contentPage ticTacToe">
+            <div id="ticTacToe">
+              <div class="ticTacToe__grid">
+                <div class="ticTacToe__cell"></div>
+                <div class="ticTacToe__cell"></div>
+                <div class="ticTacToe__cell"></div>
+                <div class="ticTacToe__cell"></div>
+                <div class="ticTacToe__cell"></div>
+                <div class="ticTacToe__cell"></div>
+                <div class="ticTacToe__cell"></div>
+                <div class="ticTacToe__cell"></div>
+                <div class="ticTacToe__cell"></div>
+              </div>
+              <div class="ticTacToe__button">Reset</div>
             </div>
 
-            <div class="contentPage numberGuessing">               
-                <div class="numGuessing">
-                    <p>GUESS THE NUMBER</p>
-                    <div class="gridNumGame">
+            <script src="scr/ticTacToe.js"></script>
+            <link rel="stylesheet" href="styles/ticTacToe.css" />
+          </div>
 
-                    </div>
-                </div>
-                <link rel="stylesheet" href="styles/numGuess.css">
-                <script src="scr/numGuess.js"></script>
-            </div>
+          <div class="contentPage currency"></div>
 
-            <div class="contentPage passwordGenerator">
+          <div class="contentPage snakeGame"></div>
 
-            </div>
+          <div class="contentPage gallery"></div>
 
-            <div class="contentPage quiz">
+          <div class="contentPage sorting"></div>
 
-            </div>
-
-            <div class="contentPage ticTacToe">
-                <div id="ticTacToe">
-                    <div class="ticTacToe__grid">
-                        <div class="ticTacToe__cell"></div>
-                        <div class="ticTacToe__cell"></div>
-                        <div class="ticTacToe__cell"></div>
-                        <div class="ticTacToe__cell"></div>
-                        <div class="ticTacToe__cell"></div>
-                        <div class="ticTacToe__cell"></div>
-                        <div class="ticTacToe__cell"></div>
-                        <div class="ticTacToe__cell"></div>
-                        <div class="ticTacToe__cell"></div>
-                    </div>
-                    <div class="ticTacToe__button">Reset</div>
-                </div>
-
-                <script src="scr/ticTacToe.js"></script>
-                <link rel="stylesheet" href="styles/ticTacToe.css">
-            </div>
-
-            <div class="contentPage currency">
-
-            </div>
-
-            <div class="contentPage snakeGame">
-
-            </div>
-
-            <div class="contentPage gallery">
-
-            </div>
-
-            <div class="contentPage sorting">
-
-            </div>
-
-            <div class="contentPage weather">
-
-            </div>
+          <div class="contentPage weather"></div>
         </div>
+      </div>
+
+      <div class="footer"></div>
     </div>
 
-    <div class="footer">
-
-    </div>
-    </div>
-    
     <script src="scr/script.js"></script>
-</body>
+  </body>
 </html>
