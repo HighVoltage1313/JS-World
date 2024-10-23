@@ -71,7 +71,6 @@ header {
 }
 
 .header__grid {
-    height: 250px;
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(4, 1fr);
@@ -80,6 +79,7 @@ header {
 
 .header__element {
     min-width: 100px;
+    min-height: 150px;
 }
 
 .header__element:nth-child(1) {
@@ -472,4 +472,19 @@ header {
     align-items: center;
     justify-content: center;
     display: flex;
+}
+
+@media (max-width: 765px) {
+    .container__pages {       
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .header__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .basic {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .header__element.card-element.card-blue {
+        min-height: 250px;
+    }
 }
