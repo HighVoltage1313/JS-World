@@ -1,0 +1,9 @@
+.weather__box {
+    background-color: aliceblue;
+    border-radius: 25px;
+    min-height: 300px;
+    min-width: 300px;
+    align-content: center;
+    justify-items: center;
+    display: grid;
+}

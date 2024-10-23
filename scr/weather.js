@@ -1,8 +1,11 @@
 const weatherLocation = document.querySelector(".weather__location");
 const weatherTemp = document.querySelector(".weather__temperature");
+const weatherTempMax = document.querySelector(".weather__temperatureMax");
+const weatherTempMin = document.querySelector(".weather__temperatureMin");
 const weatherData = document.querySelector(".weather__date");
+const weatherDescr = document.querySelector(".weather__description");
 
-geolocationError();
+weatherResponce("-0.118092", "51.509865"); // London
 
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
@@ -19,22 +22,32 @@ function geolocationSuccess(pos) {
 
 function geolocationError(error) {
   console.log("Geolocation error: " + error);
-  weatherResponce("-0.118092", "51.509865"); // London
 }
 
-function weatherUpdate(city, temp) {
+function weatherUpdate(weatherNow) {
   const date = new Date();
-  weatherLocation.textContent = city;
-  weatherTemp.textContent = temp;
+  const { name, temp, tempMax, tempMin, descr } = weatherNow;
+  weatherLocation.textContent = name;
+  weatherTemp.textContent = Math.floor(temp) + "°C";
+  //weatherTempMax.textContent = tempMax;
+  //weatherTempMin.textContent = tempMin;
   weatherData.textContent =
-    date.getDay() + " " + date.toLocaleString("en-US", { month: "long" });
+    date.getDate() + " " + date.toLocaleString("en-US", { month: "long" });
+  weatherDescr.textContent = descr;
 }
 
 function weatherResponce(lon, lat) {
   getWeather(lon, lat)
     .then((data) => {
       console.log(data);
-      weatherUpdate(data.name, data.main.temp);
+      const weatherNow = {
+        name: data.name,
+        temp: data.main.temp,
+        tempMax: data.main.temp_max,
+        tempMin: data.main.temp_min,
+        descr: data.weather[0].description,
+      };
+      weatherUpdate(weatherNow);
     })
     .catch((error) => {
       console.log(error);
