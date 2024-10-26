@@ -39,6 +39,10 @@
     margin: -5px;
 }
 
+.weather__description {
+    opacity: 50%;
+}
+
 .weather__table {
     display: grid;
     list-style-type: none;
@@ -60,7 +64,7 @@
 
 .weather__table > li > div {
     height: 25px;
-    width: 25px;
+    width: 40px;
     background-repeat: repeat;
     background-position: center;
     background-size: cover;

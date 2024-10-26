@@ -44,7 +44,7 @@ a {
 }
 
 .card-element {
-    background-color: #F2F1E9;
+    background-color: aliceblue;
     border-radius: 25px;
     box-shadow: -10px 10px 20px -10px rgba(0,0,0,0.75);
     transition: .5s;    
@@ -53,7 +53,7 @@ a {
 
 .card-blue {
     background-color: #024AE5;    
-    color: #F2F1E9;
+    color: aliceblue;
 }
 
 .card-blank {
@@ -94,14 +94,14 @@ header {
 .chat {
     height: 100%;
     width: 100%;
-    color: #F2F1E9;
+    color: aliceblue;
 }
 
 .chat__screen {
     margin: 20px auto;
     height: 60%;
     width: 94%;
-    border-bottom: 1px solid #F2F1E9; 
+    border-bottom: 1px solid aliceblue; 
     border-radius: 25px;
 }
 
@@ -172,7 +172,7 @@ header {
     flex-direction: column;
     justify-content: flex-end;
     padding-bottom: 30px;
-    color: #F2F1E9;
+    color: rgb(240, 248, 255);
     position: relative;
 }
 
@@ -202,42 +202,42 @@ header {
 }
 
 .basic__box.calculator {
-    background-image: linear-gradient(rgba(216, 26, 26, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    background-image: linear-gradient(rgba(216, 26, 26, 0) 0%, rgba(240, 248, 255, 1) 50%), 
     url(https://media.geeksforgeeks.org/wp-content/uploads/20230219213349/calculator.jpg);
     background-size: cover;
     background-position: center;
 }
 
 .basic__box.numberGuessing {
-    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(240, 248, 255, 1) 50%), 
     url(https://op.ua/images/common/4/3/8/2/5ff2ff74acb12.png);
     background-size: cover;
     background-position: center;
 }
 
 .basic__box.passwordGenerator {
-    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(240, 248, 255, 1) 50%), 
     url(https://online.champlain.edu/sites/online/files/styles/width_1600/public/2021-08/blog_header-_when_is_a_password_good_-_1900x900.jpg?itok=SRx8bc9f);
     background-size: cover;
     background-position: center;
 }
 
 .basic__box.quiz {
-    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(240, 248, 255, 1) 50%), 
     url(https://thumbs.dreamstime.com/b/male-hand-holding-megaphone-quiz-time-speech-bubble-loudspeaker-banner-business-marketing-advertising-vector-125104939.jpg);
     background-size: cover;
     background-position: center;
 }
 
 .basic__box.ticTacToe {
-    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(240, 248, 255, 1) 50%), 
     url(https://play-lh.googleusercontent.com/5ENdgpFsRhQt9y_ySp9UK_p-CL0TmhSwW5pKmmzzIW0OLFR3EvAtzAGm6c_IkkfgVg);
     background-size: cover;
     background-position: center;
 }
 
 .basic__box.snakeGame {
-    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(240, 248, 255, 1) 50%), 
     url(https://play-lh.googleusercontent.com/S9ZmNx5LYCj7h2IJZb0QqkXAGki6JRaMQ25ycKfrngDkNBA6jk7rM87YcAH1prV_OA);
     background-size: cover;
     background-position: center;
@@ -245,14 +245,14 @@ header {
 }
 
 .basic__box.gallery {
-    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(240, 248, 255, 1) 50%), 
     url(https://onecms-res.cloudinary.com/image/upload/s--eMBxXhRK--/f_auto,q_auto/c_fill,g_auto,h_622,w_830/v1/tdy-migration/15073662-gallery-photo-interior-2-data.jpg?itok=NH_Jjwju);
     background-size: cover;
     background-position: center;
 }
 
 .basic__box.sorting {
-    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(242, 241, 233, 1) 50%), 
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(240, 248, 255, 1) 50%), 
     url(https://www.crio.do/blog/content/images/2022/02/Sorting-Algorithms.png);
     background-size: cover;
     background-position: center;
@@ -288,6 +288,13 @@ header {
     grid-column: span 2;
 }
 
+.basic__box:nth-child(7),
+.basic__box:nth-child(8),
+.basic__box:nth-child(12),
+.basic__box:nth-child(13) {
+    aspect-ratio: 1 / 1;
+}
+
 .basic__box .card-element {
     position: relative;
 }
@@ -309,7 +316,7 @@ header {
 #timer {
     height: 100%;
     padding: 12% 0;
-    color: #F2F1E9;
+    color: aliceblue;
     text-align: center;
     user-select: none;
 }
@@ -371,7 +378,7 @@ header {
 .advanced {
     min-height: 400px;
     width: 100%;
-    border: 1px solid #F2F1E9;
+    border: 1px solid aliceblue;
     border-radius: 25px;
     margin: 20px auto;
     align-items: center;
@@ -380,7 +387,7 @@ header {
 }
 
 .advanced > p {
-    color: #F2F1E9;
+    color: aliceblue;
     font-weight: 800;
     font-size: xx-large;    
 }
@@ -416,7 +423,7 @@ header {
 .container__pages .page:hover {
     background-color: #024ae5;
     transition: .5s;
-    color: #F2F1E9;
+    color: aliceblue;
 }
 
 @keyframes rotate {
@@ -428,7 +435,7 @@ header {
     content: '';
     padding-top: 100%;
     width: 20%;
-    background-color: #F2F1E9;
+    background-color: aliceblue;
     animation-name: rotate;
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -459,14 +466,14 @@ header {
 
 .page.active {
     background-color: #024AE5;
-    color: #F2F1E9;
+    color: aliceblue;
     position: relative;
 }
 
 .block-one {
     min-height: 400px;
     width: 100%;
-    border: 1px solid #F2F1E9;
+    border: 1px solid aliceblue;
     border-radius: 25px;
     margin: 20px auto;
     align-items: center;
@@ -486,5 +493,19 @@ header {
     }
     .header__element.card-element.card-blue {
         min-height: 250px;
+    }
+    .dice__points {
+        gap: 5%;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        align-items: center;
+        position: absolute;
+        width: 90%;
+        height: 90%;
+    }    
+    .dice__point {
+        height: 50%;
+        width: 50%;
     }
 }
